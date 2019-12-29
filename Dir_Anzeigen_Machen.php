@@ -17,7 +17,7 @@ noBot(validateForm($_POST['bot']), $_POST['result'], $_POST['aufgabe']);
 //Validieren Ordner
 $ordner = validateForm($_POST["verzeichnis"]);
 //Verzeichnis vervollständigen
-$verzeichnis = "/var/www/html/Arbeitszeit/Uploads/" . $ordner;
+$verzeichnis = "/var/www/html/" . $ordner;
 //Ausgeben
 echo $verzeichnis;
 //Liste staten
