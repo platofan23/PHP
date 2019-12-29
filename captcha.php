@@ -14,9 +14,9 @@ SessionManager::sessionStart("Local", 0, "/", "localhost", false);
 unset($_SESSION['captcha_spam']);
 
 // Variablen (können angepasst werden) //
-$captcha_bg_img 	= 'F:\xampp\htdocs\Session\Captcha\Bilder\bg_captcha_3.png'; 						// Pfad zum Hintergrundbild
-$captcha_over_img 	= 'F:\xampp\htdocs\Session\Captcha\Bilder\bg_captcha_over.png';					// Pfad zum Bild, was über das Captcha gelegt wird
-$font_file 			= 'F:\xampp\htdocs\Session\Captcha\Schriftarten\Madame.ttf';	// Pfad zur Schriftdatei
+$captcha_bg_img 	= ''; 						// Pfad zum Hintergrundbild
+$captcha_over_img 	= '';					// Pfad zum Bild, was über das Captcha gelegt wird
+$font_file 			= '';	// Pfad zur Schriftdatei
 $font_size			= 30; 										// Schriftgröße
 $text_angle			= mt_rand(0, 5);							// Schriftwinkel (Werte zwischen 0 und 5)
 $text_x				= mt_rand(0, 18);							// X-Position (Werte zwischen 0 und 18)
