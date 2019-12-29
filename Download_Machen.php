@@ -17,7 +17,7 @@ $verzeichnis = validateForm($_POST["verzeichnis"]);
 //Datei validieren
 $datei = validateForm($_POST["datei"]);
 //File bauen
-$file = '/var/www/html/Arbeitszeit/Uploads/' . $verzeichnis . '/' . $datei;
+$file = '/var/www/html/' . $verzeichnis . '/' . $datei;
 //Asugeben
 echo $file;
 //Testen ob existiert + bei Erfolg der Download
