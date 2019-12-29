@@ -1,0 +1,39 @@
+.divTable
+{
+    margin-top:8%;
+    margin-left:10%;
+    display:  table;
+    width:auto;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:5px;/*cellspacing:poor IE support for  this*/
+   /* border-collapse:separate;*/
+}
+
+.divRow
+{
+   display:table-row;
+   width:auto;
+}
+
+.divCell
+{
+    float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    width:200px;
+    background-color:#ccc;
+}
+
+@media (max-width: 1000px) {
+	.divTable
+	{
+    		margin-top:15%;
+    		margin-left:10%;
+ 		display:  table;
+    		width:auto;
+    		background-color:#eee;
+    		border:1px solid  #666666;
+   	 	border-spacing:5px;/*cellspacing:poor IE support for  this*/
+   		/* border-collapse:separate;*/
+	}	
+}

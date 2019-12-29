@@ -1,0 +1,175 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  background: #1E88E5;
+  color: black;
+}
+
+h1 {
+  font-size: 1.2em;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+form {
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin: 100px auto;
+}
+
+.cssdesign{
+  border: 1px solid #000;
+  font-size: .9em;
+}
+
+.cssdesign:hover{
+  background-color: #FFFFCC;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:50px;
+  padding: 0 100px;
+  background: #262626;
+  width:100%;
+  box-sizing: border-box;
+  z-index:10;
+}
+
+header .logo {
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  float: left;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  margin:0;
+  padding:0;
+  display:flex;
+}
+
+header nav ul li {
+  list-style:none;
+  position: relative;
+}
+
+header nav ul li.sub-menu:before {
+  content: '\f0dd';
+  font-family: fontAwesome;
+  position: absolute;
+  line-height: 50px;
+  color: #fff;
+  right: 5px;
+}
+
+header nav ul li.active.sub-menu:before {
+  content: '\f0d8';
+}
+
+header nav ul li ul {
+  position: absolute;
+  left: 0;
+  background: #333;
+  display: none;
+}
+
+header nav ul li.active ul {
+  display:block;
+}
+
+header nav ul li ul li {
+  display:block;
+  width: 200px;
+}
+
+header nav ul li a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+  display:block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color:#fff;
+  background: #2196f3;
+}
+
+.menu-toggle {
+  color:#fff;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display:none;
+}
+
+@media (max-width: 1000px) {
+
+  header{
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header nav {
+    position:absolute;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: #333;
+    top: 50px;
+    left: -100%;
+    transition: 0.5s;
+  }
+
+  header nav.active {
+    left: 0;
+  }
+
+  header nav ul {
+    display:block;
+    text-align: center;
+  }
+
+  header nav ul li a {
+    border-bottom: 1px solid rgba(0,0,0,.2);
+  }
+
+  header nav ul li.active ul {
+    position: relative;
+    background: #003e6f;
+  }
+
+  header nav ul li ul li {
+    width: 100%;
+  }
+}
