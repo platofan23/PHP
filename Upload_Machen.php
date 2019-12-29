@@ -13,7 +13,7 @@ crsfValidate(validateForm($_POST['_csrf_token'] ?? null), validateForm($_POST['t
 //Auch wird das Datum abeprüft und die Werte werden validiert
 noBot(validateForm($_POST['bot']), $_POST['result'], $_POST['aufgabe']);
 //Verzeichnis zusammenbauen
-$target_path = '/var/www/html/Arbeitszeit/Uploads/';
+$target_path = '/var/www/html/';
 $path = validateForm($_POST['ordner']);
 $target_path .= $path;
 $target_path .= "/";
