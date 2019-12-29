@@ -1,12 +1,12 @@
 <?php
 //Datenbank Domain
-$servername = "localhost";
+$servername = "";
 //User
-$user = "root";
+$user = "";
 //Passwort
 $pw = "";
 //Datenbank
-$db = "passwort+zeit";
+$db = "";
 //Verbindung erstellen
 $con = new mysqli($servername, $user, $pw, $db);
 ?>
