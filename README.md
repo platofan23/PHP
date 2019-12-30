@@ -1,10 +1,9 @@
-Im Programm sind alle Dateien zum PHP betrieb enthalten. 
-# Dazu gehören 
-# PHP Seiten, 
-# die Datenbank als Datei zum importieren,
-# benötigte Bilder, 
-# Textdateien und
-# Schriftarten.
+#Im Programm sind alle Dateien zum PHP betrieb enthalten. 
+ Dazu gehören PHP Seiten, 
+die Datenbank als Datei zum importieren,
+benötigte Bilder, 
+Textdateien und
+Schriftarten.
 
 # Auch enhalten ist ein ChatClient, eine App mit Chat und Abholen des Einmalcodes sowie auch der Server zum Abrufen und Chatten. Hier müssen jedoch noch die Adressen eingetragen werden. Einfach downloaden, anpassen und ausführen.
 
