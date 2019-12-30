@@ -1,4 +1,4 @@
-#Im Programm sind alle Dateien zum PHP betrieb enthalten. 
+# Im Programm sind alle Dateien zum PHP betrieb enthalten. 
  Dazu gehören PHP Seiten, 
 die Datenbank als Datei zum importieren,
 benötigte Bilder, 
