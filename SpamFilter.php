@@ -70,7 +70,7 @@ class SpamFilter
 
 	public static function default_blacklist_directory()
 	{
-		$back = 'F:\xampp\htdocs\Session\BlackList';
+		$back = '';
 		return $back;
 	}
 	public static function default_blacklist_update_url()
