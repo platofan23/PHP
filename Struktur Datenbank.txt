@@ -1,0 +1,366 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Erstellungszeit: 31. Dez 2019 um 20:53
+-- Server-Version: 10.3.17-MariaDB-0+deb10u1
+-- PHP-Version: 7.4.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `passwort+zeit`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `arbeitszeit`
+--
+
+CREATE TABLE `arbeitszeit` (
+  `Datum` date NOT NULL,
+  `AnzahlStunden` double NOT NULL,
+  `Anfang` time NOT NULL,
+  `Ende` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `benutzer`
+--
+
+CREATE TABLE `benutzer` (
+  `Nutzernummer` int(11) NOT NULL,
+  `Benutzername` varchar(255) COLLATE utf8_german2_ci NOT NULL,
+  `Passwort` varchar(255) COLLATE utf8_german2_ci NOT NULL,
+  `permissionlvl` int(11) NOT NULL,
+  `SessionID` text COLLATE utf8_german2_ci NOT NULL,
+  `FehlgeschlageneVersuche` int(11) NOT NULL,
+  `EinCode` varchar(255) COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `bot`
+--
+
+CREATE TABLE `bot` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `crsfef`
+--
+
+CREATE TABLE `crsfef` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL,
+  `Token` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `crsffe`
+--
+
+CREATE TABLE `crsffe` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL,
+  `Token` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `downupdir`
+--
+
+CREATE TABLE `downupdir` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL,
+  `Verzeichnis_Datei` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `fehlerhafteingabe`
+--
+
+CREATE TABLE `fehlerhafteingabe` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL,
+  `Eingabe` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `loginer`
+--
+
+CREATE TABLE `loginer` (
+  `id` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `loginfe`
+--
+
+CREATE TABLE `loginfe` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `passwoerter`
+--
+
+CREATE TABLE `passwoerter` (
+  `ID` int(11) NOT NULL,
+  `Seite` varchar(40) COLLATE utf8_german2_ci NOT NULL,
+  `PW` varchar(40) COLLATE utf8_german2_ci NOT NULL,
+  `Benutzer` varchar(40) COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `registerer`
+--
+
+CREATE TABLE `registerer` (
+  `id` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IP-Adresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `registerfe`
+--
+
+CREATE TABLE `registerfe` (
+  `id` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `zeitspam`
+--
+
+CREATE TABLE `zeitspam` (
+  `ID` int(11) NOT NULL,
+  `DatumZeit` datetime NOT NULL,
+  `Benutzer` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `IPAdresse` varchar(25) COLLATE utf8_german2_ci NOT NULL,
+  `Grund` longtext COLLATE utf8_german2_ci NOT NULL,
+  `Eingabe` longtext COLLATE utf8_german2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `arbeitszeit`
+--
+ALTER TABLE `arbeitszeit`
+  ADD UNIQUE KEY `Datum` (`Datum`);
+
+--
+-- Indizes für die Tabelle `benutzer`
+--
+ALTER TABLE `benutzer`
+  ADD PRIMARY KEY (`Nutzernummer`),
+  ADD UNIQUE KEY `Nutzernummer` (`Nutzernummer`),
+  ADD UNIQUE KEY `Benutzername` (`Benutzername`),
+  ADD UNIQUE KEY `SessionID` (`SessionID`(32));
+
+--
+-- Indizes für die Tabelle `bot`
+--
+ALTER TABLE `bot`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `crsfef`
+--
+ALTER TABLE `crsfef`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `crsffe`
+--
+ALTER TABLE `crsffe`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `downupdir`
+--
+ALTER TABLE `downupdir`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `fehlerhafteingabe`
+--
+ALTER TABLE `fehlerhafteingabe`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `loginer`
+--
+ALTER TABLE `loginer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `loginfe`
+--
+ALTER TABLE `loginfe`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `passwoerter`
+--
+ALTER TABLE `passwoerter`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indizes für die Tabelle `registerer`
+--
+ALTER TABLE `registerer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `registerfe`
+--
+ALTER TABLE `registerfe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `zeitspam`
+--
+ALTER TABLE `zeitspam`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `benutzer`
+--
+ALTER TABLE `benutzer`
+  MODIFY `Nutzernummer` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `bot`
+--
+ALTER TABLE `bot`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `crsfef`
+--
+ALTER TABLE `crsfef`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `crsffe`
+--
+ALTER TABLE `crsffe`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `downupdir`
+--
+ALTER TABLE `downupdir`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `fehlerhafteingabe`
+--
+ALTER TABLE `fehlerhafteingabe`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `loginer`
+--
+ALTER TABLE `loginer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `loginfe`
+--
+ALTER TABLE `loginfe`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `passwoerter`
+--
+ALTER TABLE `passwoerter`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `registerer`
+--
+ALTER TABLE `registerer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `registerfe`
+--
+ALTER TABLE `registerfe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `zeitspam`
+--
+ALTER TABLE `zeitspam`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
