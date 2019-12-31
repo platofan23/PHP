@@ -21,6 +21,7 @@ Desweiteren gibt es einen funktionierenden Dateiupload sowie Download und auch A
 Das ganze ist abgesichert durch eine ganze Session-Klasse (Quelle: https://blog.teamtreehouse.com/how-to-create-bulletproof-sessions), einem Captcha beim Login (Quelle: http://www-coding.de/so-gehts-eigenes-captcha-mit-php/) 
 und einem Spamfilter (Quelle: https://github.com/IQAndreas/php-spam-filter). 
 
-Die Eingaben werden validiert und überprüft. Cross-Site-Scripting, SQL-Injektionen werden ebenfalls verhindert. Desweiteren gibt es noch eine Zeitliche Überprüfung sowie auch eine Aufgaben-Verfizierung, ob man auch kein Bot ist. Der Login ist zusätzlich durch ein Einmalcode und eine Rechteprüfung abgesichert. Ab 5 Loginversuchen wird man automatisch gesperrt.
+Die Eingaben werden validiert und überprüft. Cross-Site-Scripting, Code-Injektion und SQL-Injektionen werden ebenfalls verhindert. Desweiteren gibt es noch eine Zeitliche Überprüfung sowie auch eine Aufgaben-Verfizierung, ob man auch kein Bot ist. Der Login ist zusätzlich durch ein Einmalcode und eine Rechteprüfung abgesichert. Ab 5 Loginversuchen wird man automatisch gesperrt. Beim Registrieren wird das Passwort getestet. Beim Upload werden die Dateiarten geprüft und können nur in einen bestimmten Ordner geladen werden.
 
+Jeder Fehlschlag wird am Ende noch in der Datenbank dokumentiert.
 # Viel Spaß mit den Dateien.
